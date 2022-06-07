@@ -1,0 +1,22 @@
+{
+  "name": "unlock-recurring-mev",
+  "version": "0.0.1",
+  "description": "Example for MEV by renewing Unlock Protocol memberships",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pwagner/unlock-recurring-mev.git"
+  },
+  "homepage": "https://github.com/pwagner/unlock-recurring-mev",
+  "devDependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.0.6",
+    "@nomiclabs/hardhat-waffle": "^2.0.3",
+    "dotenv": "^16.0.1",
+    "ethereum-waffle": "^3.4.4",
+    "ethers": "^5.6.8",
+    "hardhat": "^2.9.7",
+    "needle": "^3.1.0"
+  },
+  "scripts": {
+    "start": "npx hardhat run scripts/01-find-locks.js --network testnet && npx hardhat run scripts/02-find-subscribers.js --network testnet && npx hardhat run scripts/03-find-profitable.js --network testnet && npx hardhat run scripts/04-renew-memberships.js --network testnet"
+  }
+}
